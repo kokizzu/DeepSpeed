@@ -2,7 +2,7 @@
 title: "DeepSpeed Data Efficiency: A composable library that makes better use of data, increases training efficiency, and improves model quality"
 excerpt: ""
 date: 2022-12-12 00:09:00
-tags: training
+tags: training English
 ---
 
 [ ![DeepSpeed Data Efficiency](/assets/images/data_efficiency/data_efficiecy_fig0.png) ](/assets/images/data_efficiency/data_efficiecy_fig0.png){: .align-center}
@@ -141,4 +141,4 @@ The composed DeepSpeed Data Efficiency solution leverages both data efficiency t
 
 # Concluding Remarks
 
-We are very excited to share DeepSpeed Data Efficiency library with the community and improve it with your feedback. Please find the code, tutorial, and documents at the [DeepSpeed GitHub](https://github.com/microsoft/DeepSpeed), and [website](/tutorials/data-efficiency/). And for more technical details please read our [Random-LTD paper](https://arxiv.org/abs/2211.11586) and [DeepSpeed Data Efficiency paper](https://arxiv.org/abs/2212.03597). We believe that our composable library and novel data efficiency techniques will help users reduce training cost while maintaining model quality or achieve better quality under similar cost. And we hope DeepSpeed Data Efficiency could become a platform that motivates and accelerates future research on deep learning data efficiency.
+We are very excited to share DeepSpeed Data Efficiency library with the community and improve it with your feedback. Please find the code, tutorial, and documents at the [DeepSpeed GitHub](https://github.com/deepspeedai/DeepSpeed), and [website](/tutorials/data-efficiency/). And for more technical details please read our [Random-LTD paper](https://arxiv.org/abs/2211.11586) and [DeepSpeed Data Efficiency paper](https://arxiv.org/abs/2212.03597). We believe that our composable library and novel data efficiency techniques will help users reduce training cost while maintaining model quality or achieve better quality under similar cost. And we hope DeepSpeed Data Efficiency could become a platform that motivates and accelerates future research on deep learning data efficiency.

@@ -16,7 +16,7 @@ Please go through the [original tutorial](https://pytorch.org/tutorials/beginner
 
 ## Enabling DeepSpeed
 
-The codes may be obtained [here](https://github.com/microsoft/DeepSpeedExamples/tree/master/gan).
+The codes may be obtained [here](https://github.com/deepspeedai/DeepSpeedExamples/tree/master/gan).
 
 ### Argument Parsing
 
@@ -101,7 +101,7 @@ deepspeed gan_deepspeed_train.py --dataset celeba --cuda --deepspeed_config gan_
 
 ## Performance Comparison
 
-We use a total batch size of 64 and perform the training on 16 GPUs for 1 epoch on a DGX-2 node which leads to 3x speed-up. The summary of the the results is given below:
+We use a total batch size of 64 and perform the training on 16 GPUs for 1 epoch on a DGX-2 node which leads to 3x speed-up. The summary of the results is given below:
 
 - Baseline total wall clock time for 1 epochs is 393 secs
 

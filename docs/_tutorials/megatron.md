@@ -19,7 +19,7 @@ reduction_** from using DeepSpeed.
 
 ## Training GPT-2 with the Original Megatron-LM
 
-We've copied the original model code from [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) into DeepSpeed [Megatron-LM](https://github.com/microsoft/Megatron-DeepSpeed) and made it available as a submodule. To download, execute:
+We've copied the original model code from [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) into DeepSpeed [Megatron-LM](https://github.com/deepspeedai/Megatron-DeepSpeed) and made it available as a submodule. To download, execute:
 ```bash
 git submodule update --init --recursive
 ```
@@ -53,7 +53,7 @@ To use DeepSpeed we will modify three files :
 
 
 ### Argument Parsing
-The first step is to apply DeepSpeed is adding DeepSpeed arguments to
+The first step is adding DeepSpeed arguments to
 Megatron-LM GPT2 model, using `deepspeed.add_config_arguments()` in
 `arguments.py`.
 

@@ -2,7 +2,7 @@
 title: "Training a Trillion Parameters with Pipeline Parallelism"
 excerpt: ""
 date: 2020-09-09 00:00:00
-tags: training
+tags: training English
 ---
 
 DeepSpeed includes new support for pipeline parallelism! DeepSpeed's training
@@ -14,5 +14,5 @@ low-bandwidth network by up to 7x.
 * For a brief overview and results including trillion-parameter capabilities,
   see our [press release]({{ site.press_release_v3 }}).
 * To get started with pipeline parallel training in DeepSpeed, we recommend our [tutorial](/tutorials/pipeline/).
-* See our AlexNet example in [DeepSpeedExamples](https://github.com/microsoft/DeepSpeedExamples).
+* See our AlexNet example in [DeepSpeedExamples](https://github.com/deepspeedai/DeepSpeedExamples).
 * Read our API documentation on [readthedocs](https://deepspeed.readthedocs.io/en/latest/pipeline.html).

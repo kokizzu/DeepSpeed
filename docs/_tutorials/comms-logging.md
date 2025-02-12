@@ -13,7 +13,7 @@ In this tutorial, we introduce DeepSpeed communication logging and provide examp
 
 NOTE: All logging communication calls are synchronized in order to provide accurate timing information. This may hamper performance if your model heavily uses asynchronous communication operations.
 
-Logging communication calls is vital to ensure networking resources are fully utilized. The DeepSpeed communication logger enables the detection and logging of all communication operations launched under `deepspeed.comm`. Each communication operation can all be directly printed to the console immediately after completion (via the `verbose` config option), or a summary may be printed with a call to `deepspeed.comm.log_summary()` in the client code at the completion of training, an epoch, after N training iterations, etc.
+Logging communication calls is vital to ensure networking resources are fully utilized. The DeepSpeed communication logger enables the detection and logging of all communication operations launched under `deepspeed.comm`. Each communication operation can all be directly printed to the console immediately after completion (via the `verbose` config option), or a summary may be printed with a call to `deepspeed.comm.log_summary()` or `deepspeed.com.log_summary(show_straggler=True)` in the client code at the completion of training, an epoch, after N training iterations, etc.
 
 ## Usage
 
@@ -64,7 +64,7 @@ The steps to add DeepSpeed communication log summaries are as follows:
 2. (Optional) If your application contains `torch.distributed` calls that you wish to log, import `deepspeed.comm` package and modify `torch.distributed` calls to use `deepspeed.comm` (Note: The `deepspeed.comm` collective and pt2pt APIs exactly match `torch.distributed`)
 3. Call `deepspeed.comm.log_summary`
 
-For example usage, see the following modified [DeepSpeedExamples/cifar](https://github.com/microsoft/DeepSpeedExamples/tree/master/cifar) example:
+For example usage, see the following modified [DeepSpeedExamples/cifar](https://github.com/deepspeedai/DeepSpeedExamples/tree/master/cifar) example:
 
 ```python
 # Step 2: (Optional) Import deepspeed.comm
@@ -113,4 +113,15 @@ broadcast | [Caller Func: _broadcast_model]
                     98.25 MB            1                   8540.60             8540.60             0.19                0.18
 reduce_scatter_tensor | [Caller Func: reduce_scatter_fn]
                     678.86 MB           80                  1527.17             13.94               1211.75             1136.01
+```
+
+Straggler effect can be shown by supplying optional argument `show_straggler=True` to `deepspeed.comm.log_summary()` call.   Straggler effect is defined as the time a rank waits for the slowest rank to start communication.  For each collective, `log_summary` would get the minimum collective time among all ranks, compute straggler effect as follows:
+
+```
+straggler = sum(t_collectives - allreduce(t_collectives, MIN))
+```
+
+Print straggler effect with the following `log_summary` call in the example above:
+```
+    dist.log_summary(show_straggler=True)
 ```
